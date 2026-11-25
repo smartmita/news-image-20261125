@@ -4,15 +4,19 @@ import * as path from 'node:path';
 import * as url from 'node:url';
 
 const PNG_HEADER = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+const PNG_IEND = Buffer.from([0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82]);
 const MAX_BYTES = 1048576;
 const MAX_DIM = 1024;
 
 function assertValidPng(buffer: Buffer): { width: number; height: number } {
-  if (buffer.length === 0 || buffer.length > MAX_BYTES) {
+  if (buffer.length < 32 || buffer.length > MAX_BYTES) {
     throw new Error(`Unexpected PNG byte length: ${buffer.length}`);
   }
   if (!buffer.subarray(0, 8).equals(PNG_HEADER)) {
     throw new Error('Image header does not match PNG magic bytes');
+  }
+  if (!buffer.subarray(buffer.length - 12).equals(PNG_IEND)) {
+    throw new Error('Image payload missing valid PNG IEND chunk');
   }
   const width = buffer.readUInt32BE(16);
   const height = buffer.readUInt32BE(20);
