@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261125/smartmita/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 [![reward](https://make.fun/badge/news-image-20261125/smartmita/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-Editorial 1024x1024 world news broadsheet summing up Wednesday, 25 November 2026 across all 7 global regions with custom vector scenes, a Natural Earth 110m vector atlas, and 23 verified dispatches.
+Editorial 1024x1024 world news broadsheet summing up Wednesday, 25 November 2026 across all 7 global regions with custom vector scenes, a Natural Earth 110m vector atlas, and 36 verified single-topic dispatches.
 
 ## Run it
 
